@@ -7,6 +7,51 @@
     android:layout_height="match_parent"
     tools:context=".AddArticleActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CB000000"
+        android:elevation="50dp"
+        android:id="@+id/viewer_for_image"
+        android:visibility="gone"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/close_image"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+
+            android:src="@drawable/ic_baseline_close_24"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/delete_image"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+
+            android:src="@drawable/ic_baseline_delete_24"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:id="@+id/view_mode_image_viewer"
+
+            android:layout_below="@id/close_image"/>
+
+
+    </RelativeLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -40,6 +85,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Title of your article"
                     android:gravity="center"
+                    android:id="@+id/title"
                     android:textColor="@color/black"
                     android:textSize="25dp" />
 
@@ -54,6 +100,7 @@
                 <DatePicker
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/date_picker"
                     />
 
                 <TextView
@@ -69,6 +116,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
                     android:minHeight="150dp"
+                    android:id="@+id/body"
                     android:hint="Write whatever you want to write"
                     android:gravity="start"/>
 
@@ -84,9 +132,15 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:scaleType="centerCrop"
+                    android:visibility="gone"
                     android:id="@+id/Image_viewer"
                     android:src="@drawable/appicondairy"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:id="@+id/image_recycler_view"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"/>
 
                 <Button
                     android:layout_width="match_parent"
@@ -96,6 +150,16 @@
                     android:background="@color/teal_700"
                     android:textSize="23dp"
                     android:id="@+id/select_image"
+                    android:layout_marginTop="20dp"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save this page to dairy"
+                    android:textColor="@android:color/white"
+                    android:background="@color/teal_700"
+                    android:textSize="17dp"
+                    android:id="@+id/save_data"
                     android:layout_marginTop="20dp"/>
 
             </LinearLayout>

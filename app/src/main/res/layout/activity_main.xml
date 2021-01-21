@@ -4,7 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/root"
+
     tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:background="#A9000000"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/mainRecyclerView"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        />
 
 
 
@@ -14,6 +30,7 @@
         android:src="@drawable/add_dairy"
         android:scaleType="centerCrop"
         android:id="@+id/myactionbar"
+        app:backgroundTint="#3F51B5"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"

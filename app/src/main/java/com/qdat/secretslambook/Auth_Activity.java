@@ -1,13 +1,14 @@
 package com.qdat.secretslambook;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.qdat.secretslambook.Contract.Contract;
 
 public class Auth_Activity extends AppCompatActivity {
 
@@ -19,7 +20,7 @@ public class Auth_Activity extends AppCompatActivity {
     MediaPlayer player;
     Button clear,ok;
     TextView password_Text_view;
-
+    SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,8 @@ public class Auth_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (authenticate(pass,temp_password)){
+                String realPass = preferences.getString(Contract.APP_PASSWORD,"12345");
+                if (authenticate(pass,realPass)){
                     Toast.makeText(Auth_Activity.this, "Password Accepted"
                             , Toast.LENGTH_SHORT).show();
                     player = MediaPlayer.create(Auth_Activity.this,R.raw.kung_fu);
@@ -90,6 +92,7 @@ public class Auth_Activity extends AppCompatActivity {
         ok = findViewById(R.id.ok);
         player = MediaPlayer.create(this,R.raw.punch_effect);
         password_Text_view = findViewById(R.id.password_entry);
+        preferences = this.getSharedPreferences(Contract.PREFRANCE_NAME,MODE_PRIVATE);
 
     }
 
@@ -104,7 +107,9 @@ public class Auth_Activity extends AppCompatActivity {
 
         for (int i = 0;i<realPass.length();i++){
             if (realPass.charAt(i)!=yourPass.charAt(i)){
+
 //                Toast.makeText(this, "real --> "+realPass.charAt(i)+" your --> "+yourPass.charAt(i), Toast.LENGTH_SHORT).show();
+
                 return false;
             }
         }
