@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/my_gradient"
+    android:layout_height="match_parent"
+    tools:context=".InstructionScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fucl"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/small_cloud"
+            android:layout_weight="2"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Instructions"
+            android:textColor="@color/white"
+            android:textSize="35dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/small_cloud"
+            android:layout_weight="2"/>
+    </LinearLayout>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_below="@id/fucl"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        android:text="Your default password is 12345.\nYou can change it by simpally from settings."
+        android:gravity="center"
+        android:layout_above="@id/fal"
+        android:layout_centerInParent="true"
+        />
+
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:id="@+id/fal"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/my_cloud"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Got it"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:id="@+id/got_it"
+        android:background="@drawable/small_btn"/>
+
+</RelativeLayout>

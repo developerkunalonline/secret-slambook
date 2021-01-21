@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root"
+    tools:context=".DairyViewer">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/fuckerView"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/delete_icon"
+                    android:src="@drawable/ic_baseline_delete_black"
+                    android:layout_marginRight="20dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dark Mode"
+                    android:id="@+id/dark"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:padding="10dp"/>
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:id="@+id/modeSwitch"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fuckerView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/fuckerView">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Title of the dairy page"
+                    android:textColor="#132AAC"
+                    android:gravity="center"
+                    android:id="@+id/title"
+                    android:textSize="24dp"
+                    android:padding="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/date"
+                    android:layout_height="wrap_content"
+                    android:text="17 Februrary 2021"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:padding="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dear Diary ,"
+                    android:id="@+id/dear"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/body"
+                    android:layout_height="wrap_content"
+                    android:text="The Crafts Mela at Suraj Kund was much more impressive and grand than what I had imagined. This year the ‘Theme State’ was Rajasthan. The whole campus was painted with the visuals of Ranthambore, Chittor, Jodhpur and Jaisalmer. It was Mini India assembled on a few hundred acres of land. All the awarded artisans from different states had set up their workshops and stalls there. Many countries, more particularly Pakistan, Nepal and Afghanistan gave it an international look. Bangles, jewellery decoration pieces, wall-hangings, purses, shoes, sarees, garments and cosmetics found thousands of buyers. Every evening there were cultural shows at the ‘Chaupal’ and the ‘Rangmanch’. The ‘Food Court’ provided all kinds of delicacies for food-lovers. Basically, it was India in all its colours, tastes and sounds scattered on the Aravalli hills."
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:padding="10dp"/>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:id="@+id/view_pager"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bye Bye Diary"
+                    android:textColor="@color/black"
+                    android:id="@+id/bye"
+                    android:textSize="23dp"
+                    android:padding="10dp"/>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>
