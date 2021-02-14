@@ -21,7 +21,7 @@ public class DairyDataProvider extends ContentProvider {
     static {
         matcher = new UriMatcher(Contract.DAIRY_INVALID);
         matcher.addURI(Contract.ATHORITY,Contract.TABLE_PAGES,Contract.DAIRY_ALL);
-        matcher.addURI(Contract.ATHORITY,Contract.TABLE_PAGES+"#",Contract.DAIRY_SPECIFIC);
+        matcher.addURI(Contract.ATHORITY,Contract.TABLE_PAGES+"/#",Contract.DAIRY_SPECIFIC);
     }
 
 
